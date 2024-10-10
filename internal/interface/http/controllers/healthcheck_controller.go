@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/andreis3/catalog-write-api/internal/interface/http/helpers"
+	"github.com/andreis3/catalog-write-db/internal/interface/http/helpers"
 )
 
 type HealthCheckResponse struct {

@@ -3,8 +3,8 @@ package routers
 import (
 	"net/http"
 
-	"github.com/andreis3/catalog-write-api/internal/interface/http/controllers"
-	"github.com/andreis3/catalog-write-api/internal/interface/http/helpers"
+	"github.com/andreis3/catalog-write-db/internal/interface/http/controllers"
+	"github.com/andreis3/catalog-write-db/internal/interface/http/helpers"
 )
 
 type HealthCheckRouter struct{}

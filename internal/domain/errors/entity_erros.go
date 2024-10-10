@@ -31,10 +31,10 @@ func (e *EntityErrors) Errors() []error {
 func (e *EntityErrors) Error() string {
 	e.mu.Lock()
 	defer e.mu.Unlock()
-	return strings.Join(e.errorsToString(), "\n")
+	return strings.Join(e.ErrorsToString(), "\n")
 }
 
-func (e *EntityErrors) errorsToString() []string {
+func (e *EntityErrors) ErrorsToString() []string {
 	errString := make([]string, len(e.errors))
 	for i, err := range e.errors {
 		errString[i] = err.Error()

@@ -5,7 +5,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/andreis3/catalog-write-api/internal/util"
+	"github.com/andreis3/catalog-write-db/internal/util"
 )
 
 func DecoderBodyRequest[T any](req *http.Request) (T, *util.ErrorSchema) {

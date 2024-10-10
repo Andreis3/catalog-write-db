@@ -4,7 +4,7 @@ import (
 	"errors"
 	"slices"
 
-	err "github.com/andreis3/catalog-write-api/internal/domain/errors"
+	err "github.com/andreis3/catalog-write-db/internal/domain/errors"
 )
 
 type status uint8
@@ -34,11 +34,37 @@ type APIKey struct {
 	err.EntityErrors
 }
 
-func NewAPIKey(name, status string) *APIKey {
-	return &APIKey{
-		Name:   name,
-		Status: status,
-	}
+func Builder() *APIKey {
+	return &APIKey{}
+}
+
+func (a *APIKey) SetID(id int64) *APIKey {
+	a.ID = id
+	return a
+}
+
+func (a *APIKey) SetName(name string) *APIKey {
+	a.Name = name
+	return a
+}
+
+func (a *APIKey) SetStatus(status string) *APIKey {
+	a.Status = status
+	return a
+}
+
+func (a *APIKey) SetStatusActive() *APIKey {
+	a.Status = ACTIVE.String()
+	return a
+}
+
+func (a *APIKey) SetStatusInactive() *APIKey {
+	a.Status = INACTIVE.String()
+	return a
+}
+
+func (a *APIKey) Build() *APIKey {
+	return a
 }
 
 func (a *APIKey) Validate() *err.EntityErrors {
