@@ -50,7 +50,7 @@ var _ = Describe("INTERNAL :: DOMAIN :: ENTITIES :: APIKEY.GO", func() {
 			})
 
 			It("should not return an error when status is inactive", func() {
-				apikey := entities.Builder().SetID(1).SetName("apikey").SetStatus("inactive").Build()
+				apikey := entities.Builder().SetID(1).SetName("apikey").SetStatusInactive().Build()
 
 				err := apikey.Validate()
 

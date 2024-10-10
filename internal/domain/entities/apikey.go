@@ -7,25 +7,12 @@ import (
 	err "github.com/andreis3/catalog-write-db/internal/domain/errors"
 )
 
-type status uint8
-
 const (
-	ACTIVE status = iota
-	INACTIVE
+	ACTIVE   = "active"
+	INACTIVE = "inactive"
 )
 
-func (s status) String() string {
-	switch s {
-	case ACTIVE:
-		return "active"
-	case INACTIVE:
-		return "inactive"
-	default:
-		return "unknown"
-	}
-}
-
-var APIKeyStatus = [...]string{ACTIVE.String(), INACTIVE.String()}
+var APIKeyStatus = [...]string{ACTIVE, INACTIVE}
 
 type APIKey struct {
 	ID     int64
@@ -54,12 +41,12 @@ func (a *APIKey) SetStatus(status string) *APIKey {
 }
 
 func (a *APIKey) SetStatusActive() *APIKey {
-	a.Status = ACTIVE.String()
+	a.Status = ACTIVE
 	return a
 }
 
 func (a *APIKey) SetStatusInactive() *APIKey {
-	a.Status = INACTIVE.String()
+	a.Status = INACTIVE
 	return a
 }
 

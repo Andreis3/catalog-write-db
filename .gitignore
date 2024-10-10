@@ -1,3 +1,4 @@
 .env
 .idea
+coverage
 docs/test-case.txt
